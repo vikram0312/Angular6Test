@@ -1,0 +1,14 @@
+<form [formGroup] = 'formGroup'>
+    <label>FirstName</label>
+    <!-- <div class ="error" *ngIf="!formGroup.controls.firstName.valid && formGroup.controls.firstName.dirty">First name error</div> -->
+    <div *ngIf="formGroup.controls.firstName.errors.firstNameErr && formGroup.controls.firstName.dirty">Name cannot be other then Vikram.</div>
+    <input type="text" formControlName="firstName"><br><br>
+    <label>LastName</label>
+    <input type="text" formControlName="lastName"><br><br>
+    <label>Age</label>
+    <input type="text" formControlName="age"><br>
+
+
+    <button [disabled]="!formGroup.valid && !formGroup.error">submit</button>
+
+</form>
